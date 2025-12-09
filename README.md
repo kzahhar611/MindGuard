@@ -2,11 +2,11 @@
 
 ### AI-Driven Mental Health Early Detection System
 
-[![License](https://img.shields.io/badge/License-Proprietary-red.svg)]()
-[![Platform](https://img.shields.io/badge/Platform-iOS%20%7C%20Android%20%7C%20Web-blue.svg)]()
-[![Status](https://img.shields.io/badge/Status-In%20Development-yellow.svg)]()
-[![HIPAA](https://img.shields.io/badge/HIPAA-Compliant-green.svg)]()
-[![GDPR](https://img.shields.io/badge/GDPR-Compliant-green.svg)]()
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)](https://github.com/kzahhar611/MindGuard)
+[![Platform](https://img.shields.io/badge/Platform-iOS%20%7C%20Android%20%7C%20Web-blue.svg)](https://github.com/kzahhar611/MindGuard)
+[![Status](https://img.shields.io/badge/Status-In%20Development-yellow.svg)](https://github.com/kzahhar611/MindGuard)
+[![HIPAA](https://img.shields.io/badge/HIPAA-Compliant-green.svg)](https://github.com/kzahhar611/MindGuard)
+[![GDPR](https://img.shields.io/badge/GDPR-Compliant-green.svg)](https://github.com/kzahhar611/MindGuard)
 
 ---
 
@@ -48,20 +48,22 @@
 
 Traditional mental health support is **reactive** — individuals typically engage with support systems only after symptoms have significantly worsened.
 
+```mermaid
+flowchart LR
+    subgraph Traditional["TRADITIONAL INTERVENTION TIMELINE"]
+        A["🟡 Early Signs<br/>(Undetected)"] --> B["🟠 Symptoms Worsen<br/>(Ignored)"]
+        B --> C["🔴 Crisis Point<br/>(Too Late)"]
+        C --> D["🏥 Intervention<br/>(Reactive)"]
+    end
+    
+    style A fill:#fff3cd,stroke:#ffc107
+    style B fill:#ffe5d0,stroke:#fd7e14
+    style C fill:#f8d7da,stroke:#dc3545
+    style D fill:#d1e7dd,stroke:#198754
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                    TRADITIONAL INTERVENTION TIMELINE                         │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                               │
-│   Early Signs     Symptoms Worsen    Crisis Point      Intervention          │
-│       ●────────────────●────────────────●────────────────●                   │
-│       │                │                │                │                    │
-│   (Undetected)    (Ignored)       (Too Late)      (Reactive)                 │
-│                                                                               │
-│   📊 70% of mental health issues go undetected until crisis stage            │
-│   💰 Intervention costs multiply 10x when addressing at crisis stage         │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
+
+> 📊 **70%** of mental health issues go undetected until crisis stage  
+> 💰 Intervention costs multiply **10x** when addressing at crisis stage
 
 ### Impact by Sector
 
@@ -77,34 +79,33 @@ Traditional mental health support is **reactive** — individuals typically enga
 
 MindGuard acts as a **passive background monitor** (with explicit user consent), analyzing three distinct data streams to generate a **Personalized Risk Score**.
 
-```
-┌──────────────────────────────────────────────────────────────────────────────┐
-│                         MINDGUARD - HOW IT WORKS                              │
-├──────────────────────────────────────────────────────────────────────────────┤
-│                                                                                │
-│    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐                      │
-│    │   📝 TEXT   │    │   🎤 VOICE  │    │  📱 BEHAVIOR │                      │
-│    │   STREAM    │    │   STREAM    │    │   STREAM    │                      │
-│    │             │    │             │    │             │                      │
-│    │ • Journals  │    │ • Tone      │    │ • Sleep     │                      │
-│    │ • Messages  │    │ • Pace      │    │ • Activity  │                      │
-│    │ • Check-ins │    │ • Hesitation│    │ • Patterns  │                      │
-│    └──────┬──────┘    └──────┬──────┘    └──────┬──────┘                      │
-│           │                  │                  │                              │
-│           └──────────────────┼──────────────────┘                              │
-│                              ▼                                                 │
-│                    ┌─────────────────┐                                         │
-│                    │   🤖 AI ENGINE  │                                         │
-│                    │  Multi-Modal    │                                         │
-│                    │  Risk Analysis  │                                         │
-│                    └────────┬────────┘                                         │
-│                             ▼                                                  │
-│                    ┌─────────────────┐                                         │
-│                    │ 📊 RISK SCORE   │                                         │
-│                    │ + Interventions │                                         │
-│                    └─────────────────┘                                         │
-│                                                                                │
-└──────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+    subgraph Input["📥 DATA STREAMS"]
+        TEXT["📝 TEXT STREAM<br/>• Journals<br/>• Messages<br/>• Check-ins"]
+        VOICE["🎤 VOICE STREAM<br/>• Tone<br/>• Pace<br/>• Hesitation"]
+        BEHAVIOR["📱 BEHAVIOR STREAM<br/>• Sleep<br/>• Activity<br/>• Patterns"]
+    end
+    
+    TEXT --> AI
+    VOICE --> AI
+    BEHAVIOR --> AI
+    
+    subgraph Processing["🤖 AI ENGINE"]
+        AI["Multi-Modal<br/>Risk Analysis"]
+    end
+    
+    AI --> OUTPUT
+    
+    subgraph Output["📊 OUTPUT"]
+        OUTPUT["RISK SCORE<br/>+ Personalized<br/>Interventions"]
+    end
+    
+    style TEXT fill:#e3f2fd,stroke:#1976d2
+    style VOICE fill:#fce4ec,stroke:#c2185b
+    style BEHAVIOR fill:#e8f5e9,stroke:#388e3c
+    style AI fill:#fff3e0,stroke:#f57c00
+    style OUTPUT fill:#f3e5f5,stroke:#7b1fa2
 ```
 
 ---
@@ -132,38 +133,78 @@ MindGuard acts as a **passive background monitor** (with explicit user consent),
 
 ## 🏗 System Architecture
 
+```mermaid
+flowchart TB
+    subgraph Client["📱 CLIENT LAYER"]
+        iOS["iOS App<br/>(Swift)"]
+        Android["Android App<br/>(Kotlin)"]
+        Web["Web Dashboard<br/>(React)"]
+    end
+    
+    iOS --> Gateway
+    Android --> Gateway
+    Web --> Gateway
+    
+    subgraph Gateway["🌐 API GATEWAY"]
+        Kong["Kong • Rate Limiting • Auth • SSL"]
+    end
+    
+    Gateway --> Services
+    
+    subgraph Services["⚙️ MICROSERVICES LAYER"]
+        Auth["Auth"]
+        User["User"]
+        Consent["Consent"]
+        Journal["Journal"]
+        Voice["Voice"]
+        Risk["Risk"]
+        Reco["Recommendations"]
+    end
+    
+    Services --> AIML
+    
+    subgraph AIML["🧠 AI/ML LAYER"]
+        NLP["NLP Pipeline"]
+        VoiceAI["Voice Analysis"]
+        Anomaly["Anomaly Detection"]
+        Fusion["Fusion Model"]
+    end
+    
+    AIML --> Data
+    Services --> Data
+    
+    subgraph Data["💾 DATA LAYER"]
+        PG["PostgreSQL"]
+        Mongo["MongoDB"]
+        Redis["Redis"]
+        Blob["Blob Storage"]
+        Kafka["Kafka"]
+    end
+    
+    style Client fill:#e3f2fd,stroke:#1976d2
+    style Gateway fill:#fff3e0,stroke:#f57c00
+    style Services fill:#e8f5e9,stroke:#388e3c
+    style AIML fill:#fce4ec,stroke:#c2185b
+    style Data fill:#f3e5f5,stroke:#7b1fa2
 ```
-┌────────────────────────────────────────────────────────────────────────────────┐
-│                           MINDGUARD ARCHITECTURE                                │
-├────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                 │
-│  ┌─────────────────────────────────────────────────────────────────────────┐   │
-│  │                         📱 CLIENT LAYER                                  │   │
-│  │   iOS App (Swift)  │  Android App (Kotlin)  │  Web Dashboard (React)    │   │
-│  └────────────────────────────────┬────────────────────────────────────────┘   │
-│                                   │ HTTPS / WSS                                 │
-│  ┌────────────────────────────────▼────────────────────────────────────────┐   │
-│  │                         🌐 API GATEWAY                                   │   │
-│  │           Kong  •  Rate Limiting  •  Auth  •  SSL Termination           │   │
-│  └────────────────────────────────┬────────────────────────────────────────┘   │
-│                                   │                                             │
-│  ┌────────────────────────────────▼────────────────────────────────────────┐   │
-│  │                     ⚙️ MICROSERVICES LAYER                               │   │
-│  │  Auth │ User │ Consent │ Journal │ Voice │ Risk │ Recommendations       │   │
-│  └────────────────────────────────┬────────────────────────────────────────┘   │
-│                                   │                                             │
-│  ┌────────────────────────────────▼────────────────────────────────────────┐   │
-│  │                         🧠 AI/ML LAYER                                   │   │
-│  │   NLP Pipeline  │  Voice Analysis  │  Anomaly Detection  │  Fusion      │   │
-│  │                        (Azure ML / GCP Vertex AI)                        │   │
-│  └────────────────────────────────┬────────────────────────────────────────┘   │
-│                                   │                                             │
-│  ┌────────────────────────────────▼────────────────────────────────────────┐   │
-│  │                         💾 DATA LAYER                                    │   │
-│  │   PostgreSQL  │  MongoDB  │  Redis  │  Blob Storage  │  Kafka           │   │
-│  └──────────────────────────────────────────────────────────────────────────┘  │
-│                                                                                 │
-└────────────────────────────────────────────────────────────────────────────────┘
+
+### Component Details
+
+```mermaid
+graph LR
+    subgraph EdgeProcessing["🔒 EDGE PROCESSING (On-Device)"]
+        Audio["🎤 Raw Audio"] --> Extract["Feature Extraction<br/>CoreML / TF Lite"]
+        Extract --> Vector["Numerical Vector"]
+        Extract --> Delete["🗑️ Delete Audio"]
+    end
+    
+    Vector --> Cloud["☁️ Cloud AI<br/>(Patterns Only)"]
+    
+    style Audio fill:#ffcdd2,stroke:#c62828
+    style Extract fill:#fff9c4,stroke:#f9a825
+    style Vector fill:#c8e6c9,stroke:#2e7d32
+    style Delete fill:#ffcdd2,stroke:#c62828
+    style Cloud fill:#bbdefb,stroke:#1565c0
 ```
 
 ---
@@ -209,17 +250,17 @@ MindGuard acts as a **passive background monitor** (with explicit user consent),
 
 | # | Document | Description |
 |:-:|----------|-------------|
-| 01 | [📋 BRD](./01-BRD-Business-Requirements-Document.md) | Business Requirements Document |
-| 02 | [📝 SRS](./02-SRS-Software-Requirements-Specification.md) | Software Requirements Specification |
-| 03 | [🏗 Architecture](./03-System-Architecture-Document.md) | System Architecture & Design |
-| 04 | [👤 User Stories](./04-User-Stories.md) | 30 User Stories across 9 Epics |
-| 05 | [📅 Sprint Planning](./05-Sprint-Planning.md) | 12-Sprint MVP Development Plan |
-| 06 | [🎨 Wireframes](./06-Wireframes-Screens.md) | UI/UX Wireframes & Design System |
-| 07 | [🤖 AI Services](./07-AI-Services-Documentation.md) | ML Models & AI Pipeline Specs |
-| 08 | [🔌 API Spec](./08-API-Specification.md) | REST API Documentation |
-| 09 | [🔒 Privacy/Compliance](./09-Privacy-Compliance.md) | GDPR, HIPAA, Security |
-| 10 | [💾 Data Model](./10-Data-Model-Schema.md) | Database Schema & Entities |
-| 11 | [📈 Roadmap/ROI](./11-Release-Roadmap-ROI.md) | 18-Month Roadmap & Business Case |
+| 01 | [📋 BRD](https://github.com/kzahhar611/MindGuard/blob/main/docs/01-BRD-Business-Requirements-Document.md) | Business Requirements Document |
+| 02 | [📝 SRS](https://github.com/kzahhar611/MindGuard/blob/main/docs/02-SRS-Software-Requirements-Specification.md) | Software Requirements Specification |
+| 03 | [🏗 Architecture](https://github.com/kzahhar611/MindGuard/blob/main/docs/03-System-Architecture-Document.md) | System Architecture & Design |
+| 04 | [👤 User Stories](https://github.com/kzahhar611/MindGuard/blob/main/docs/04-User-Stories.md) | 30 User Stories across 9 Epics |
+| 05 | [📅 Sprint Planning](https://github.com/kzahhar611/MindGuard/blob/main/docs/05-Sprint-Planning.md) | 12-Sprint MVP Development Plan |
+| 06 | [🎨 Wireframes](https://github.com/kzahhar611/MindGuard/blob/main/docs/06-Wireframes-Screens.md) | UI/UX Wireframes & Design System |
+| 07 | [🤖 AI Services](https://github.com/kzahhar611/MindGuard/blob/main/docs/07-AI-Services-Documentation.md) | ML Models & AI Pipeline Specs |
+| 08 | [🔌 API Spec](https://github.com/kzahhar611/MindGuard/blob/main/docs/08-API-Specification.md) | REST API Documentation |
+| 09 | [🔒 Privacy/Compliance](https://github.com/kzahhar611/MindGuard/blob/main/docs/09-Privacy-Compliance.md) | GDPR, HIPAA, Security |
+| 10 | [💾 Data Model](https://github.com/kzahhar611/MindGuard/blob/main/docs/10-Data-Model-Schema.md) | Database Schema & Entities |
+| 11 | [📈 Roadmap/ROI](https://github.com/kzahhar611/MindGuard/blob/main/docs/11-Release-Roadmap-ROI.md) | 18-Month Roadmap & Business Case |
 
 ---
 
@@ -268,23 +309,34 @@ MindGuard acts as a **passive background monitor** (with explicit user consent),
 
 ### Privacy Principles
 
+```mermaid
+flowchart LR
+    subgraph Voice["🎤 VOICE DATA"]
+        V1["Processed on-device"]
+        V2["Audio NEVER stored"]
+        V3["Only patterns sent"]
+    end
+    
+    subgraph Text["📝 TEXT DATA"]
+        T1["Features extracted"]
+        T2["Raw text deleted"]
+        T3["within 24 hours"]
+    end
+    
+    subgraph Behavior["📱 BEHAVIORAL"]
+        B1["Aggregated only"]
+        B2["Anonymized"]
+        B3["User controlled"]
+    end
+    
+    style Voice fill:#e3f2fd,stroke:#1976d2
+    style Text fill:#e8f5e9,stroke:#388e3c
+    style Behavior fill:#fff3e0,stroke:#f57c00
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                      PRIVACY BY DESIGN                           │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                   │
-│  🎤 VOICE DATA             📝 TEXT DATA           📱 BEHAVIORAL  │
-│  ─────────────             ───────────            ────────────   │
-│  Processed on-device       Features extracted    Aggregated     │
-│  Audio NEVER stored        Raw text deleted      only           │
-│  Only patterns sent        within 24 hours                      │
-│                                                                   │
-│  ✅ You control what we collect                                  │
-│  ✅ Export your data anytime                                     │
-│  ✅ Delete everything in 72 hours                                │
-│                                                                   │
-└─────────────────────────────────────────────────────────────────┘
-```
+
+> ✅ **You control what we collect**  
+> ✅ **Export your data anytime**  
+> ✅ **Delete everything in 72 hours**
 
 ---
 
@@ -301,8 +353,8 @@ MindGuard acts as a **passive background monitor** (with explicit user consent),
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/mindguard.git
-cd mindguard
+git clone https://github.com/kzahhar611/MindGuard.git
+cd MindGuard
 
 # Install dependencies
 npm install          # Frontend
@@ -340,35 +392,49 @@ GOOGLE_FIT_CLIENT_ID=your-client-id
 
 ## 📅 Roadmap
 
+```mermaid
+gantt
+    title MindGuard 18-Month Roadmap
+    dateFormat  YYYY-MM
+    
+    section Phase 1: MVP
+    Mobile Apps           :done, p1a, 2024-01, 3M
+    Text NLP              :done, p1b, 2024-01, 4M
+    Basic Risk Score      :done, p1c, 2024-02, 4M
+    Self-Help             :done, p1d, 2024-03, 3M
+    GDPR Compliance       :done, p1e, 2024-04, 2M
+    MVP Launch            :milestone, m1, 2024-06, 0d
+    
+    section Phase 2: Enhanced
+    Voice Analysis        :active, p2a, 2024-07, 3M
+    Wearable Integration  :p2b, 2024-07, 4M
+    Admin Dashboard       :p2c, 2024-08, 3M
+    Coaching Booking      :p2d, 2024-09, 3M
+    Advanced Analytics    :p2e, 2024-10, 2M
+    Enhanced Launch       :milestone, m2, 2024-12, 0d
+    
+    section Phase 3: Enterprise
+    Clinical Portal       :p3a, 2025-01, 3M
+    EHR Integration       :p3b, 2025-02, 4M
+    Multi-language        :p3c, 2025-03, 3M
+    Enterprise API        :p3d, 2025-04, 2M
+    Predictive Relapse    :p3e, 2025-05, 2M
+    Enterprise Launch     :milestone, m3, 2025-06, 0d
 ```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│                              18-MONTH ROADMAP                                    │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                  │
-│   PHASE 1: MVP              PHASE 2: ENHANCED        PHASE 3: ENTERPRISE        │
-│   (Months 1-6)              (Months 7-12)            (Months 13-18)             │
-│   ═══════════               ═══════════════          ══════════════             │
-│                                                                                  │
-│   ✅ Mobile Apps            ⏳ Voice Analysis        ⏳ Clinical Portal          │
-│   ✅ Text NLP               ⏳ Wearable Integr.      ⏳ EHR Integration          │
-│   ✅ Basic Risk Score       ⏳ Admin Dashboard       ⏳ Multi-language           │
-│   ✅ Self-Help              ⏳ Coaching Booking      ⏳ Enterprise API           │
-│   ✅ GDPR Compliance        ⏳ Adv. Analytics        ⏳ Predictive Relapse       │
-│                                                                                  │
-│   ────────────────────────────────────────────────────────────────────────────  │
-│   M1  M2  M3  M4  M5  M6  M7  M8  M9  M10 M11 M12 M13 M14 M15 M16 M17 M18      │
-│                     │                    │                      │               │
-│                  MVP│             Enhanced│              Enterprise│             │
-│               Launch▼              Launch▼                Launch▼               │
-│                                                                                  │
-└─────────────────────────────────────────────────────────────────────────────────┘
-```
+
+### Phase Summary
+
+| Phase | Timeline | Key Deliverables |
+|-------|----------|------------------|
+| **Phase 1: MVP** | Months 1-6 | ✅ Mobile Apps, Text NLP, Basic Risk Score, Self-Help, GDPR |
+| **Phase 2: Enhanced** | Months 7-12 | ⏳ Voice Analysis, Wearables, Admin Dashboard, Coaching |
+| **Phase 3: Enterprise** | Months 13-18 | ⏳ Clinical Portal, EHR, Multi-language, Enterprise API |
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+We welcome contributions! Please see our [Contributing Guidelines](https://github.com/kzahhar611/MindGuard/blob/main/CONTRIBUTING.md) for details.
 
 ### Development Process
 
@@ -380,7 +446,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 ### Code of Conduct
 
-Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
+Please read our [Code of Conduct](https://github.com/kzahhar611/MindGuard/blob/main/CODE_OF_CONDUCT.md) before contributing.
 
 ---
 
@@ -392,6 +458,7 @@ This project is proprietary software. All rights reserved.
 
 ## 📞 Contact
 
+- **Repository**: [github.com/kzahhar611/MindGuard](https://github.com/kzahhar611/MindGuard)
 - **Website**: [mindguard.io](https://mindguard.io)
 - **Email**: team@mindguard.io
 - **Documentation**: [docs.mindguard.io](https://docs.mindguard.io)
