@@ -129,6 +129,15 @@ flowchart TB
 - **User-Controlled Consent**: Granular control over each data stream
 - **Right to Erasure**: Complete account deletion within 72 hours
 
+### 📱 User Interface
+
+<p align="center">
+  <img src="docs/images/home_dashboard.png" width="200" alt="Home Dashboard" />
+  <img src="docs/images/risk_detail.png" width="200" alt="Risk Detail" />
+  <img src="docs/images/journal_entry.png" width="200" alt="Journal Entry" />
+  <img src="docs/images/voice_checkin.png" width="200" alt="Voice Check-in" />
+</p>
+
 ---
 
 ## 🏗 System Architecture
