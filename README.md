@@ -407,28 +407,28 @@ gantt
     dateFormat  YYYY-MM
     
     section Phase 1: MVP
-    Mobile Apps           :done, p1a, 2024-01, 3M
-    Text NLP              :done, p1b, 2024-01, 4M
-    Basic Risk Score      :done, p1c, 2024-02, 4M
-    Self-Help             :done, p1d, 2024-03, 3M
-    GDPR Compliance       :done, p1e, 2024-04, 2M
-    MVP Launch            :milestone, m1, 2024-06, 0d
+    Mobile Apps           :done, p1a, 2026-01, 3M
+    Text NLP              :done, p1b, 2026-01, 4M
+    Basic Risk Score      :done, p1c, 2026-02, 4M
+    Self-Help             :done, p1d, 2026-03, 3M
+    GDPR Compliance       :done, p1e, 2026-04, 2M
+    MVP Launch            :milestone, m1, 2026-06, 0d
     
     section Phase 2: Enhanced
-    Voice Analysis        :active, p2a, 2024-07, 3M
-    Wearable Integration  :p2b, 2024-07, 4M
-    Admin Dashboard       :p2c, 2024-08, 3M
-    Coaching Booking      :p2d, 2024-09, 3M
-    Advanced Analytics    :p2e, 2024-10, 2M
-    Enhanced Launch       :milestone, m2, 2024-12, 0d
+    Voice Analysis        :active, p2a, 2026-07, 3M
+    Wearable Integration  :p2b, 2026-07, 4M
+    Admin Dashboard       :p2c, 2026-08, 3M
+    Coaching Booking      :p2d, 2026-09, 3M
+    Advanced Analytics    :p2e, 2026-10, 2M
+    Enhanced Launch       :milestone, m2, 2026-12, 0d
     
     section Phase 3: Enterprise
-    Clinical Portal       :p3a, 2025-01, 3M
-    EHR Integration       :p3b, 2025-02, 4M
-    Multi-language        :p3c, 2025-03, 3M
-    Enterprise API        :p3d, 2025-04, 2M
-    Predictive Relapse    :p3e, 2025-05, 2M
-    Enterprise Launch     :milestone, m3, 2025-06, 0d
+    Clinical Portal       :p3a, 2027-01, 3M
+    EHR Integration       :p3b, 2027-02, 4M
+    Multi-language        :p3c, 2027-03, 3M
+    Enterprise API        :p3d, 2027-04, 2M
+    Predictive Relapse    :p3e, 2027-05, 2M
+    Enterprise Launch     :milestone, m3, 2027-06, 0d
 ```
 
 ### Phase Summary
